@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OlympicGamesApp.UI", "Olymp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OlympicGamesApp", "OlympicGamesApp\OlympicGamesApp.csproj", "{39AD2904-E197-483C-A1F5-8E4D3A32C4EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OlynpicGamesApp.Tests", "OlynpicGamesApp.Tests\OlynpicGamesApp.Tests.csproj", "{3E19809D-9F0C-4BEE-BD9D-8CA67689629A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{39AD2904-E197-483C-A1F5-8E4D3A32C4EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39AD2904-E197-483C-A1F5-8E4D3A32C4EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39AD2904-E197-483C-A1F5-8E4D3A32C4EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E19809D-9F0C-4BEE-BD9D-8CA67689629A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E19809D-9F0C-4BEE-BD9D-8CA67689629A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E19809D-9F0C-4BEE-BD9D-8CA67689629A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E19809D-9F0C-4BEE-BD9D-8CA67689629A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
