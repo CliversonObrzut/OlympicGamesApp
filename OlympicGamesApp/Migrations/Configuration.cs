@@ -114,10 +114,10 @@ namespace OlympicGamesApp.Migrations
 
             context.Venues.AddOrUpdate(
                 v => v.Name,
-                new Venue { Name = "Carioca Arena", AddressStreet = "R. Mal. Floriano, 234", Suburb = "Barra", City = "Rio de Janeiro", State = "RJ", Postal = "64585-269"},
-                new Venue { Name = "Youth Arena", AddressStreet = "R. Mal. Deodoro, 658", Suburb = "Botafogo", City = "Rio de Janeiro", State = "RJ", Postal = "63348-684"},
-                new Venue { Name = "Aquatic Olympic Stadium", AddressStreet = "Av. Iguacu, 345", Suburb = "Flamengo", City = "Rio de Janeiro", State = "RJ", Postal = "69484-131"},
-                new Venue { Name = "Tennis Olympic Center", AddressStreet = "Av. Brasil, 23", Suburb = "Copacabana", City = "Rio de Janeiro", State = "RJ", Postal = "63215-987"}
+                new Venue { Name = "Carioca Arena", StreetAddress = "R. Mal. Floriano, 234", Suburb = "Barra", City = "Rio de Janeiro", State = "RJ", PostCode = "64585-269"},
+                new Venue { Name = "Youth Arena", StreetAddress = "R. Mal. Deodoro, 658", Suburb = "Botafogo", City = "Rio de Janeiro", State = "RJ", PostCode = "63348-684"},
+                new Venue { Name = "Aquatic Olympic Stadium", StreetAddress = "Av. Iguacu, 345", Suburb = "Flamengo", City = "Rio de Janeiro", State = "RJ", PostCode = "69484-131"},
+                new Venue { Name = "Tennis Olympic Center", StreetAddress = "Av. Brasil, 23", Suburb = "Copacabana", City = "Rio de Janeiro", State = "RJ", PostCode = "63215-987"}
                 );
             context.SaveChanges();
 
@@ -163,9 +163,9 @@ namespace OlympicGamesApp.Migrations
 
             context.Customers.AddOrUpdate(
                 c => new {c.Login, c.Password},
-                new Customer { FirstName = "Cliverson", MiddleNames = "Thomas", LastName = "Obrzut", DateOfBirth = DateTime.Parse("30/04/1982"), GenderId = 1, AddressStreet = "57, Howard Ave", Suburb = "Dee Why", City = "Sydney", State = "NSW", Country = "Australia", Postal = "2099", Login = "cliver_82@hotmail.com", Password = "olympic1" },
-                new Customer { FirstName = "Vera", MiddleNames = "Lucia", LastName = "Obrzut", DateOfBirth = DateTime.Parse("25/01/1959"), GenderId = 2, AddressStreet = "456, Alberto Panek", Suburb = "Orleans", City = "Curitiba", State = "PR", Country = "Brasil", Postal = "81280-270", Login = "vera_obrzut@yahoo.com.br", Password = "olympic2" },
-                new Customer { FirstName = "Ling", MiddleNames = "Yew", LastName = "Hang", DateOfBirth = DateTime.Parse("26/04/1979"), GenderId = 1, AddressStreet = "F-12 3A Garden Park", Suburb = "Bandar Sg Long", City = "Kajang", State = "Selangor", Country = "Malaysia", Postal = "43000", Login = "kenling@hotmail.com", Password = "olympic3" }
+                new Customer { FirstName = "Cliverson", MiddleNames = "Thomas", LastName = "Obrzut", DateOfBirth = DateTime.Parse("30/04/1982"), GenderId = 1, StreetAddress = "57, Howard Ave", Suburb = "Dee Why", City = "Sydney", State = "NSW", Country = "Australia", PostCode = "2099", Login = "cliver_82@hotmail.com", Password = "olympic1" },
+                new Customer { FirstName = "Vera", MiddleNames = "Lucia", LastName = "Obrzut", DateOfBirth = DateTime.Parse("25/01/1959"), GenderId = 2, StreetAddress = "456, Alberto Panek", Suburb = "Orleans", City = "Curitiba", State = "PR", Country = "Brasil", PostCode = "81280-270", Login = "vera_obrzut@yahoo.com.br", Password = "olympic2" },
+                new Customer { FirstName = "Ling", MiddleNames = "Yew", LastName = "Hang", DateOfBirth = DateTime.Parse("26/04/1979"), GenderId = 1, StreetAddress = "F-12 3A Garden Park", Suburb = "Bandar Sg Long", City = "Kajang", State = "Selangor", Country = "Malaysia", PostCode = "43000", Login = "kenling@hotmail.com", Password = "olympic3" }
                 );
             context.SaveChanges();
 

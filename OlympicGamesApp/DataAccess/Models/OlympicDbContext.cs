@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace OlympicGamesApp.DataAccess.Models
 {
-    class OlympicDbContext : DbContext
+    public class OlympicDbContext : DbContext
     {
         public DbSet<Athlete> Athletes { get; set; }
         public DbSet<CompetitionEvent> CompetitionEvents { get; set; }

@@ -16,10 +16,10 @@ namespace OlympicGamesApp.DataAccess.Models
         public int GenderId { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-        public string AddressStreet { get; set; }
+        public string StreetAddress { get; set; }
         public string Suburb { get; set; }
         public string City { get; set; }
-        public string Postal { get; set; }
+        public string PostCode { get; set; }
         public string State { get; set; }
         public string Country { get; set; }
         public virtual Gender Gender { get; set; }

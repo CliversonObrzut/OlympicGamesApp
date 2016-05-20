@@ -16,7 +16,7 @@ namespace OlympicGamesApp.DataAccess.Models.Mapping
                 .HasMaxLength(100)
                 .IsRequired();
 
-            this.Property(t => t.AddressStreet)
+            this.Property(t => t.StreetAddress)
                 .HasColumnType("varchar")
                 .HasMaxLength(100)
                 .IsRequired();
@@ -36,7 +36,7 @@ namespace OlympicGamesApp.DataAccess.Models.Mapping
                 .HasMaxLength(50)
                 .IsRequired();
 
-            this.Property(c => c.Postal)
+            this.Property(c => c.PostCode)
                 .HasColumnType("varchar")
                 .HasMaxLength(10)
                 .IsRequired();

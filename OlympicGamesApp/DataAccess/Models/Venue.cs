@@ -10,10 +10,10 @@ namespace OlympicGamesApp.DataAccess.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string AddressStreet { get; set; }
+        public string StreetAddress { get; set; }
         public string Suburb { get; set; }
         public string City { get; set; }
-        public string Postal { get; set; }
+        public string PostCode { get; set; }
         public string State { get; set; }
         public virtual List<CompetitionEvent> CompetitionEvents { get; set; }
         public virtual List<VenueSector> VenueSectors { get; set; }
