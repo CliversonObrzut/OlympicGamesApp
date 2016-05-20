@@ -13,7 +13,6 @@ namespace OlympicGamesApp.DataAccess.Models
         public string MiddleNames { get; set; }
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public int CountryId { get; set; }
         public int GenderId { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
@@ -22,21 +21,21 @@ namespace OlympicGamesApp.DataAccess.Models
         public string City { get; set; }
         public string Postal { get; set; }
         public string State { get; set; }
-        public virtual Country Country { get; set; }
+        public string Country { get; set; }
         public virtual Gender Gender { get; set; }
         public virtual List<TicketOrder> TicketOrders { get; set; }
-        public virtual List<FavoriteAthlete> FavoriteAthletes { get; set; }
-        public virtual List<FavoriteCountry> FavoriteCountries { get; set; }
-        public virtual List<FavoriteModality> FavoriteModalities { get; set; }
-        public virtual List<FavoriteSport> FavoriteSports { get; set; }
+        public virtual List<Athlete> Athletes { get; set; }
+        public virtual List<Country> Countries { get; set; }
+        public virtual List<Modality> Modalities { get; set; }
+        public virtual List<Sport> Sports { get; set; }
 
         public Customer()
         {
             TicketOrders = new List<TicketOrder>();
-            FavoriteAthletes = new List<FavoriteAthlete>();
-            FavoriteCountries = new List<FavoriteCountry>();
-            FavoriteModalities = new List<FavoriteModality>();
-            FavoriteSports = new List<FavoriteSport>();
+            Athletes = new List<Athlete>();
+            Countries = new List<Country>();
+            Modalities = new List<Modality>();
+            Sports = new List<Sport>();
         }
     }
 }

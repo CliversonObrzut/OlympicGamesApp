@@ -20,5 +20,14 @@ namespace OlympicGamesApp.DataAccess.Models
         public int BronzeMedal { get; set; }
         public virtual Country Country { get; set; }
         public virtual Gender Gender { get; set; }
+        public virtual List<Modality> Modalities { get; set; }
+        public virtual List<Customer> Customers { get; set; }
+
+        public Athlete()
+        {
+            Modalities = new List<Modality>();
+            Customers = new List<Customer>();
+        }
+        
     }
 }

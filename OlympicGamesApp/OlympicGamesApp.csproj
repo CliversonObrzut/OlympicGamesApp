@@ -38,6 +38,10 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SharpRepository.Repository, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpRepository.Repository.1.4.7.2\lib\net40\SharpRepository.Repository.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -50,26 +54,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\Models\Athlete.cs" />
-    <Compile Include="DataAccess\Models\AthleteModality.cs" />
     <Compile Include="DataAccess\Models\CompetitionEvent.cs" />
-    <Compile Include="DataAccess\Models\CompetitionEventTicket.cs" />
     <Compile Include="DataAccess\Models\CompetitionPhase.cs" />
     <Compile Include="DataAccess\Models\CompetitionSession.cs" />
     <Compile Include="DataAccess\Models\Country.cs" />
     <Compile Include="DataAccess\Models\Customer.cs" />
-    <Compile Include="DataAccess\Models\FavoriteAthlete.cs" />
-    <Compile Include="DataAccess\Models\FavoriteCountry.cs" />
-    <Compile Include="DataAccess\Models\FavoriteModality.cs" />
-    <Compile Include="DataAccess\Models\FavoriteSport.cs" />
     <Compile Include="DataAccess\Models\Gender.cs" />
     <Compile Include="DataAccess\Models\Mapping\AthleteMap.cs" />
-    <Compile Include="DataAccess\Models\Mapping\AthleteModalityMap.cs" />
     <Compile Include="DataAccess\Models\Mapping\CompetitionEventMap.cs" />
-    <Compile Include="DataAccess\Models\Mapping\CompetitionEventTicketMap.cs" />
     <Compile Include="DataAccess\Models\Mapping\CompetitionPhaseMap.cs" />
     <Compile Include="DataAccess\Models\Mapping\CompetitionSessionMap.cs" />
     <Compile Include="DataAccess\Models\Mapping\CountryMap.cs" />
     <Compile Include="DataAccess\Models\Mapping\CustomerMap.cs" />
+    <Compile Include="DataAccess\Models\Mapping\GenderMap.cs" />
+    <Compile Include="DataAccess\Models\Mapping\ModalityCategoryMap.cs" />
+    <Compile Include="DataAccess\Models\Mapping\ModalityMap.cs" />
+    <Compile Include="DataAccess\Models\Mapping\SportMap.cs" />
+    <Compile Include="DataAccess\Models\Mapping\TicketEventMap.cs" />
+    <Compile Include="DataAccess\Models\Mapping\TicketOrderItemMap.cs" />
+    <Compile Include="DataAccess\Models\Mapping\TicketOrderMap.cs" />
+    <Compile Include="DataAccess\Models\Mapping\VenueMap.cs" />
+    <Compile Include="DataAccess\Models\Mapping\VenueSectorMap.cs" />
     <Compile Include="DataAccess\Models\Modality.cs" />
     <Compile Include="DataAccess\Models\ModalityCategory.cs" />
     <Compile Include="DataAccess\Models\OlympicDbContext.cs" />
@@ -79,10 +84,18 @@
     <Compile Include="DataAccess\Models\TicketOrderItem.cs" />
     <Compile Include="DataAccess\Models\Venue.cs" />
     <Compile Include="DataAccess\Models\VenueSector.cs" />
+    <Compile Include="Migrations\201605180428561_InitialCreate.cs" />
+    <Compile Include="Migrations\201605180428561_InitialCreate.Designer.cs">
+      <DependentUpon>201605180428561_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\TestRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Services\" />
+    <EmbeddedResource Include="Migrations\201605180428561_InitialCreate.resx">
+      <DependentUpon>201605180428561_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

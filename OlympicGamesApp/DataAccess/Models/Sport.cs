@@ -10,6 +10,13 @@ namespace OlympicGamesApp.DataAccess.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-
+        public virtual List<Modality> Modalities { get; set; }
+        public virtual List<Customer> Customers { get; set; }
+        
+        public Sport()
+        {
+            Modalities = new List<Modality>();
+            Customers = new List<Customer>();
+        }        
     }
 }

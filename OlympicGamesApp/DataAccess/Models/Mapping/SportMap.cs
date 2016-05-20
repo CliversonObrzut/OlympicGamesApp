@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace OlympicGamesApp.DataAccess.Models.Mapping
 {
-    public class AthleteModalityMap : EntityTypeConfiguration<AthleteModality>
+    public class SportMap : EntityTypeConfiguration<Sport>
     {
-        public AthleteModalityMap()
+        public SportMap()
         {
-            this.HasKey(a => new { a.AthleteId, a.ModalityId });
+            this.Property(s => s.Name)
+                .HasColumnType("varchar")
+                .HasMaxLength(50)
+                .IsRequired();
         }
     }
 }

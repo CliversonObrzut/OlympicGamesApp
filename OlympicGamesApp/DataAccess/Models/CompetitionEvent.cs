@@ -10,7 +10,7 @@ namespace OlympicGamesApp.DataAccess.Models
     {
         public int Id { get; set; }
         public DateTime Date { get; set; }
-        public DateTime Time { get; set; }
+        public TimeSpan Time { get; set; }
         public int ModalityId { get; set; }
         public int CompetitionSessionId { get; set; }
         public int CompetitionPhaseId { get; set; }
@@ -20,5 +20,12 @@ namespace OlympicGamesApp.DataAccess.Models
         public virtual CompetitionSession CompetitionSession { get; set; }
         public virtual CompetitionPhase CompetitionPhase { get; set; }
         public virtual Venue Venue { get; set; }
+        public virtual List<TicketEvent> TicketEvents { get; set; }
+
+        public CompetitionEvent()
+        {
+            TicketEvents = new List<TicketEvent>();
+        }
+
     }
 }

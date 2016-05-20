@@ -13,6 +13,15 @@ namespace OlympicGamesApp.DataAccess.Models
         public decimal TicketPrice { get; set; }
         public int TicketsAvailable { get; set; }
         public int VenueSectorId { get; set; }
-        public VenueSector VenueSector { get; set; }
+        public virtual VenueSector VenueSector { get; set; }
+        public virtual List<CompetitionEvent> CompetitionEvents { get; set; }
+        public virtual List<TicketOrderItem> TicketOrderItems { get; set; }
+
+        public TicketEvent()
+        {
+            CompetitionEvents = new List<CompetitionEvent>();
+            TicketOrderItems = new List<TicketOrderItem>();
+        }
+        
     }
 }

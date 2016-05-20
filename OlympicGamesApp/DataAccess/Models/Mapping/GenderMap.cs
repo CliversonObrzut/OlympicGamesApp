@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace OlympicGamesApp.DataAccess.Models.Mapping
 {
-    public class CompetitionEventTicketMap : EntityTypeConfiguration<CompetitionEventTicket>
+    public class GenderMap : EntityTypeConfiguration<Gender>
     {
-        public CompetitionEventTicketMap()
+        public GenderMap()
         {
-            this.HasKey(c => new { c.CompetitionEventId, c.TicketEventId });
+            this.Property(g => g.Name)
+                .HasColumnType("varchar")
+                .HasMaxLength(50)
+                .IsRequired();
         }
     }
 }

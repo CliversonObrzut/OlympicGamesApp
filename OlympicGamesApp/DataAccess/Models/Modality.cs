@@ -14,5 +14,15 @@ namespace OlympicGamesApp.DataAccess.Models
         public int SportId { get; set; }
         public virtual ModalityCategory ModalityCategory { get; set; }
         public virtual Sport Sport { get; set; }
+        public virtual List<Athlete> Athletes { get; set; }
+        public virtual List<CompetitionEvent> CompetitionEvents { get; set; }
+        public virtual List<Customer> Customers { get; set; }
+
+        public Modality()
+        {
+            Athletes = new List<Athlete>();
+            CompetitionEvents = new List<CompetitionEvent>();
+            Customers = new List<Customer>();
+        }
     }
 }

@@ -12,7 +12,16 @@ namespace OlympicGamesApp.DataAccess.Models
         public string Name { get; set; }
         public string AddressStreet { get; set; }
         public string Suburb { get; set; }
-        public int Postal { get; set; }
+        public string City { get; set; }
+        public string Postal { get; set; }
         public string State { get; set; }
+        public virtual List<CompetitionEvent> CompetitionEvents { get; set; }
+        public virtual List<VenueSector> VenueSectors { get; set; }
+
+        public Venue()
+        {
+            CompetitionEvents = new List<CompetitionEvent>();
+            VenueSectors = new List<VenueSector>();
+        }
     }
 }

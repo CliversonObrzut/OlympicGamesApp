@@ -60,6 +60,11 @@ namespace OlympicGamesApp.DataAccess.Models.Mapping
                 .HasMaxLength(50)
                 .IsRequired();
 
+            this.Property(c => c.Country)
+                .HasColumnType("varchar")
+                .HasMaxLength(50)
+                .IsRequired();
+
             this.Property(c => c.Postal)
                 .HasColumnType("varchar")
                 .HasMaxLength(10)

@@ -13,6 +13,12 @@ namespace OlympicGamesApp.DataAccess.Models
         public decimal Multiplier { get; set; }
         public int VenueId { get; set; }
         public virtual Venue Venue { get; set; }
+        public virtual List<TicketEvent> TicketEvents { get; set; }
 
+        public VenueSector()
+        {
+            TicketEvents = new List<TicketEvent>();
+        }
+        
     }
 }

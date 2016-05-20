@@ -10,5 +10,12 @@ namespace OlympicGamesApp.DataAccess.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public virtual List<Modality> Modalities { get; set; }
+
+        public ModalityCategory()
+        {
+            Modalities = new List<Modality>();
+        }
+
     }
 }
