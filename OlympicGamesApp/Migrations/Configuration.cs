@@ -123,16 +123,16 @@ namespace OlympicGamesApp.Migrations
 
             context.CompetitionEvents.AddOrUpdate(
                 c => new {c.ModalityId, c.CompetitionPhaseId, c.CompetitionSessionId},
-                new CompetitionEvent { Date = DateTime.Parse("06/08/2016"), Time = TimeSpan.Parse("14:00:00"), ModalityId = 7, CompetitionSessionId = 1, CompetitionPhaseId = 2, VenueId = 2, BasePrice = 35 },
-                new CompetitionEvent { Date = DateTime.Parse("21/08/2016"), Time = TimeSpan.Parse("15:00:00"), ModalityId = 7, CompetitionSessionId = 10, CompetitionPhaseId = 10, VenueId = 2, BasePrice = 120 },
-                new CompetitionEvent { Date = DateTime.Parse("06/08/2016"), Time = TimeSpan.Parse("09:00:00"), ModalityId = 1, CompetitionSessionId = 1, CompetitionPhaseId = 1, VenueId = 3, BasePrice = 80 },
-                new CompetitionEvent { Date = DateTime.Parse("06/08/2016"), Time = TimeSpan.Parse("09:12:00"), ModalityId = 1, CompetitionSessionId = 2, CompetitionPhaseId = 1, VenueId = 3, BasePrice = 80 },
-                new CompetitionEvent { Date = DateTime.Parse("06/08/2016"), Time = TimeSpan.Parse("09:30:00"), ModalityId = 1, CompetitionSessionId = 4, CompetitionPhaseId = 1, VenueId = 3, BasePrice = 80 },
-                new CompetitionEvent { Date = DateTime.Parse("06/08/2016"), Time = TimeSpan.Parse("16:00:00"), ModalityId = 1, CompetitionSessionId = 5, CompetitionPhaseId = 9, VenueId = 3, BasePrice = 80 },
-                new CompetitionEvent { Date = DateTime.Parse("06/08/2016"), Time = TimeSpan.Parse("16:12:00"), ModalityId = 1, CompetitionSessionId = 6, CompetitionPhaseId = 9, VenueId = 3, BasePrice = 80 },
-                new CompetitionEvent { Date = DateTime.Parse("07/08/2016"), Time = TimeSpan.Parse("11:00:00"), ModalityId = 1, CompetitionSessionId = 7, CompetitionPhaseId = 10, VenueId = 3, BasePrice = 80 },
-                new CompetitionEvent { Date = DateTime.Parse("09/08/2016"), Time = TimeSpan.Parse("10:00:00"), ModalityId = 4, CompetitionSessionId = 8, CompetitionPhaseId = 10, VenueId = 4, BasePrice = 70 },
-                new CompetitionEvent { Date = DateTime.Parse("13/08/2016"), Time = TimeSpan.Parse("11:00:00"), ModalityId = 3, CompetitionSessionId = 7, CompetitionPhaseId = 10, VenueId = 3, BasePrice = 80 }
+                new CompetitionEvent { Date = DateTime.Parse("06/08/2016"), Time = TimeSpan.Parse("14:00:00"), ModalityId = 7, CompetitionSessionId = 1, CompetitionPhaseId = 2, VenueId = 2, BasePrice = 35m },
+                new CompetitionEvent { Date = DateTime.Parse("21/08/2016"), Time = TimeSpan.Parse("15:00:00"), ModalityId = 7, CompetitionSessionId = 10, CompetitionPhaseId = 10, VenueId = 2, BasePrice = 120m },
+                new CompetitionEvent { Date = DateTime.Parse("06/08/2016"), Time = TimeSpan.Parse("09:00:00"), ModalityId = 1, CompetitionSessionId = 1, CompetitionPhaseId = 1, VenueId = 3, BasePrice = 80m },
+                new CompetitionEvent { Date = DateTime.Parse("06/08/2016"), Time = TimeSpan.Parse("09:12:00"), ModalityId = 1, CompetitionSessionId = 2, CompetitionPhaseId = 1, VenueId = 3, BasePrice = 80m },
+                new CompetitionEvent { Date = DateTime.Parse("06/08/2016"), Time = TimeSpan.Parse("09:30:00"), ModalityId = 1, CompetitionSessionId = 4, CompetitionPhaseId = 1, VenueId = 3, BasePrice = 80m },
+                new CompetitionEvent { Date = DateTime.Parse("06/08/2016"), Time = TimeSpan.Parse("16:00:00"), ModalityId = 1, CompetitionSessionId = 5, CompetitionPhaseId = 9, VenueId = 3, BasePrice = 80m },
+                new CompetitionEvent { Date = DateTime.Parse("06/08/2016"), Time = TimeSpan.Parse("16:12:00"), ModalityId = 1, CompetitionSessionId = 6, CompetitionPhaseId = 9, VenueId = 3, BasePrice = 80m },
+                new CompetitionEvent { Date = DateTime.Parse("07/08/2016"), Time = TimeSpan.Parse("11:00:00"), ModalityId = 1, CompetitionSessionId = 7, CompetitionPhaseId = 10, VenueId = 3, BasePrice = 80m },
+                new CompetitionEvent { Date = DateTime.Parse("09/08/2016"), Time = TimeSpan.Parse("10:00:00"), ModalityId = 4, CompetitionSessionId = 8, CompetitionPhaseId = 10, VenueId = 4, BasePrice = 70m },
+                new CompetitionEvent { Date = DateTime.Parse("13/08/2016"), Time = TimeSpan.Parse("11:00:00"), ModalityId = 3, CompetitionSessionId = 7, CompetitionPhaseId = 10, VenueId = 3, BasePrice = 80m }
                 );
             context.SaveChanges();
 
@@ -179,13 +179,13 @@ namespace OlympicGamesApp.Migrations
 
             context.TicketOrderItems.AddOrUpdate(
                 t => new {t.TicketEventId, t.TicketOrderId},
-                new TicketOrderItem { TicketEventId = 1, TicketOrderId = 1, Quantity = 3, TotalLinePrice = 136.5m},
-                new TicketOrderItem { TicketEventId = 2, TicketOrderId = 1, Quantity = 5, TotalLinePrice = 900m},
-                new TicketOrderItem { TicketEventId = 3, TicketOrderId = 1, Quantity = 4, TotalLinePrice = 640m},
-                new TicketOrderItem { TicketEventId = 4, TicketOrderId = 2, Quantity = 8, TotalLinePrice = 960m},
-                new TicketOrderItem { TicketEventId = 5, TicketOrderId = 3, Quantity = 7, TotalLinePrice = 882m},
-                new TicketOrderItem { TicketEventId = 2, TicketOrderId = 2, Quantity = 3, TotalLinePrice = 136.5m},
-                new TicketOrderItem { TicketEventId = 6, TicketOrderId = 3, Quantity = 3, TotalLinePrice = 360m}
+                new TicketOrderItem { TicketEventId = 1, TicketOrderId = 1, UnitItemPrice = 45.5m, Quantity = 3, TotalItemPrice = 136.5m},
+                new TicketOrderItem { TicketEventId = 2, TicketOrderId = 1, UnitItemPrice = 180m, Quantity = 5, TotalItemPrice = 900m},
+                new TicketOrderItem { TicketEventId = 3, TicketOrderId = 1, UnitItemPrice = 160m, Quantity = 4, TotalItemPrice = 640m},
+                new TicketOrderItem { TicketEventId = 4, TicketOrderId = 2, UnitItemPrice = 120m, Quantity = 8, TotalItemPrice = 960m},
+                new TicketOrderItem { TicketEventId = 5, TicketOrderId = 3, UnitItemPrice = 126m, Quantity = 7, TotalItemPrice = 882m},
+                new TicketOrderItem { TicketEventId = 1, TicketOrderId = 2, UnitItemPrice = 45.5m, Quantity = 3, TotalItemPrice = 136.5m},
+                new TicketOrderItem { TicketEventId = 6, TicketOrderId = 3, UnitItemPrice = 120m, Quantity = 3, TotalItemPrice = 360m}
                 );
             context.SaveChanges();
         }

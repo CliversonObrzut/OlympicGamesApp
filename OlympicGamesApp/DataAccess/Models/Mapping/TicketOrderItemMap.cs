@@ -15,7 +15,12 @@ namespace OlympicGamesApp.DataAccess.Models.Mapping
                 .HasColumnType("int")
                 .IsRequired();
 
-            this.Property(t => t.TotalLinePrice)
+            this.Property(t => t.UnitItemPrice)
+                .HasColumnType("money")
+                .HasPrecision(18, 2)
+                .IsRequired();
+
+            this.Property(t => t.TotalItemPrice)
                 .HasColumnType("money")
                 .HasPrecision(18, 2)
                 .IsRequired();

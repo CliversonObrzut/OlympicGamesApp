@@ -12,7 +12,8 @@ namespace OlympicGamesApp.DataAccess.Models
         public int TicketOrderId { get; set; }
         public int TicketEventId { get; set; }
         public int Quantity { get; set; }
-        public decimal TotalLinePrice { get; set; }
+        public decimal UnitItemPrice { get; set; }
+        public decimal TotalItemPrice { get; set; }
         public virtual TicketOrder TicketOrder { get; set; }
         public virtual TicketEvent TicketEvent { get; set; }
     }
