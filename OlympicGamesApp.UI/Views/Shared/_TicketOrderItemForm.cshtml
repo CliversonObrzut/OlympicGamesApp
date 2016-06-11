@@ -1,0 +1,24 @@
+﻿@model OlympicGamesApp.UI.ViewModels.TicketOrder.TicketOrderCreateViewModel
+
+@{
+    int i = ViewBag.Pos;
+    string id = "TicketOrderItemAdded" + i;
+}
+<tr id=@id>
+    <td class="form-group col-md-4">
+        @Html.DropDownListFor(model => model.TicketOrderItemModel[i].TicketEventId, Model.TicketEvents, "Please select a Ticket", htmlAttributes: new { @class = "form-control", style = "max-width:300px"})
+        @Html.ValidationMessageFor(model => model.TicketOrderItemModel[i].TicketEventId, "", new { @class = "text-danger" })
+    </td>
+    <td class="form-group col-md-2">
+        @Html.EditorFor(model => model.TicketOrderItemModel[i].UnitItemPrice, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+    </td>
+    <td class="form-group col-md-2">
+        @Html.EditorFor(model => model.TicketOrderItemModel[i].Quantity, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.TicketOrderItemModel[i].Quantity, "", new { @class = "text-danger" })
+    </td>
+    <td class="form-group col-md-2">
+        @Html.EditorFor(model => model.TicketOrderItemModel[i].TotalItemPrice, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+    </td>
+</tr>
+
+

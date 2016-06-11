@@ -76,9 +76,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomerTests.cs" />
+    <Compile Include="TicketOrderApplicationServiceTests.cs" />
+    <Compile Include="CustomerApplicationServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -89,6 +89,9 @@
       <Project>{39ad2904-e197-483c-a1f5-8e4d3a32c4ef}</Project>
       <Name>OlympicGamesApp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

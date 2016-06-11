@@ -1,0 +1,113 @@
+﻿@model OlympicGamesApp.UI.ViewModels.TicketOrder.TicketOrderCreateViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>@Model.FirstName,</h2>
+
+<div class="all-buttons">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class= "form-horizontal">
+            <h4>Choose your tickets</h4>
+            @Html.HiddenFor(model => model.CustomerId)
+            @Html.HiddenFor(model => model.FirstName)
+            @Html.HiddenFor(model => model.lineNumber)
+            <hr />
+            <div class="jumbotron">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.PurchaseDate)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.PurchaseDate)
+                        @Html.HiddenFor(model => model.PurchaseDate)
+                    </dd>
+
+                    <dt style="padding-top:7px">
+                        @Html.DisplayNameFor(model => model.TotalCost)
+                    </dt>
+
+                    <dd>
+                        @Html.EditorFor(model => model.TotalCost, new { htmlAttributes = new { @class = "form-control", style="max-width:154px", disabled = "disabled", @readonly = "readonly"} })
+                    </dd>
+                </dl>
+                <hr id="clear-both"/>
+                <table  class="table my-center-align">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TicketOrderItemModel[0].TicketEventId)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TicketOrderItemModel[0].UnitItemPrice)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TicketOrderItemModel[0].Quantity)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TicketOrderItemModel[0].TotalItemPrice)
+                            </th>
+                            <th>
+
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="TicketOrderItem">
+                        <tr>
+                            <td class="form-group col-md-4">
+                                @Html.DropDownListFor(model => model.TicketOrderItemModel[0].TicketEventId, Model.TicketEvents, "Please select a Ticket",htmlAttributes: new { @class = "form-control", style = "max-width:300px" })
+                                @Html.ValidationMessageFor(model => model.TicketOrderItemModel[0].TicketEventId, "", new { @class = "text-danger" })
+                            </td>
+                            <td class="form-group col-md-2">
+                                @Html.EditorFor(model => model.TicketOrderItemModel[0].UnitItemPrice, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly"} })
+
+                            </td>
+                            <td class="form-group col-md-2">
+                                @Html.EditorFor(model => model.TicketOrderItemModel[0].Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.TicketOrderItemModel[0].Quantity, "", new { @class = "text-danger" })
+                            </td>
+                            <td class="form-group col-md-2">
+                                @Html.EditorFor(model => model.TicketOrderItemModel[0].TotalItemPrice, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+
+                            </td>
+                            <td class="form-group col-md-2 my-center-align">
+                                <button type="button" id="AddTicketOrderItemBtn" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                </button>
+                                <button type="button" id="RemoveTicketOrderItemBtn" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-minus"></span>
+                                </button>
+                            </td>
+                        </tr>
+                        @for (var i = 1; i < Model.lineNumber; i++)
+                        {
+                            @Html.HiddenFor(model => model.TicketOrderItemModel[i].TicketEventId)
+                            @Html.HiddenFor(model => model.TicketOrderItemModel[i].Quantity)
+                        }
+                    </tbody>                    
+                </table>
+                <hr id="clear-both"/>
+                <div class="form-group">
+                    <div class="col-md-offset-10 col-md-2" style="margin-top:8.5px">
+                        <input type="submit" value="Finish" class="btn btn-default" id="finish" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div>
+    @Html.ActionLink("Back to My Orders", "Index", new { id = Model.CustomerId}, null)
+</div>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/AddDeleteOrderItem.js")
+    @Scripts.Render("~/Scripts/ManagePrices.js")
+}
+

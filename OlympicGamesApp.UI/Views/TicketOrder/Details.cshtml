@@ -1,0 +1,82 @@
+﻿@model OlympicGamesApp.UI.ViewModels.TicketOrder.TicketOrderDetailsViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@Model.FirstName,</h2>
+
+<div>
+    <h4>This is your Order Details</h4>
+    <hr />
+    <div class="jumbotron">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Id)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Id)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PurchaseDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PurchaseDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TotalCost)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TotalCost)
+            </dd>
+        </dl>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TicketEventId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TicketDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UnitItemPrice)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TotalItemPrice)
+                </th>
+            </tr>
+
+            @foreach (var item in Model.TicketOrderItems)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TicketEventId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TicketEvent.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UnitItemPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalItemPrice)
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Back to My Orders", "Index", new { id = Model.CustomerId },null)
+</p>

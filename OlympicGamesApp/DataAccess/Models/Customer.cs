@@ -22,7 +22,9 @@ namespace OlympicGamesApp.DataAccess.Models
         public string PostCode { get; set; }
         public string State { get; set; }
         public string Country { get; set; }
+        public int? PictureId { get; set; }
         public virtual Gender Gender { get; set; }
+        public virtual Picture Picture { get; set; }
         public virtual List<TicketOrder> TicketOrders { get; set; }
         public virtual List<Athlete> Athletes { get; set; }
         public virtual List<Country> Countries { get; set; }

@@ -18,6 +18,8 @@ namespace OlympicGamesApp.DataAccess.Models
         public int GoldMedal { get; set; }
         public int SilverMedal { get; set; }
         public int BronzeMedal { get; set; }
+        public int? PictureId { get; set; }
+        public virtual Picture Picture { get; set; }
         public virtual Country Country { get; set; }
         public virtual Gender Gender { get; set; }
         public virtual List<Modality> Modalities { get; set; }
@@ -28,6 +30,7 @@ namespace OlympicGamesApp.DataAccess.Models
             Modalities = new List<Modality>();
             Customers = new List<Customer>();
         }
+
         
     }
 }

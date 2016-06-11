@@ -1,4 +1,5 @@
 ﻿using OlympicGamesApp.DataAccess.Models;
+using SharpRepository.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +10,16 @@ namespace OlympicGamesApp.Services
 {
     public class CustomerApplicationService
     {
-        protected OlympicDbContext _context;
+        private IRepository<Customer> _customerRepository;
+        private IRepository<Picture> _pictureRepository;
 
-        public CustomerApplicationService(OlympicDbContext context)
+        public CustomerApplicationService(IRepository<Customer> customerRepository, IRepository<Picture> pictureRepository)
         {
-            _context = context;
+            _customerRepository = customerRepository;
+            _pictureRepository = pictureRepository;
         }
 
-        public Customer CreateCustomer(string firstName, string lastName, DateTime dateOfBirth, int genderId, string streetAddress, string suburb, string city, string state, string country, string postCode, string login, string password, string middleNames = null)
+        public Customer CreateCustomer(string firstName, string lastName, DateTime dateOfBirth, int genderId, string streetAddress, string suburb, string city, string state, string country, string postCode, string login, string password, int? pictureId, string middleNames = null)
         {
             var customer = new Customer()
             {
@@ -32,18 +35,18 @@ namespace OlympicGamesApp.Services
                 Country = country,
                 PostCode = postCode,
                 Login = login,
-                Password = password
+                Password = password,
+                PictureId = genderId
             };
 
-            _context.Customers.Add(customer);
-            _context.SaveChanges();
+            _customerRepository.Add(customer);
 
             return customer;
         }
 
-        public Customer UpdateCustomer(int id, string firstName, string lastName, DateTime dateOfBirth, int genderId, string streetAddress, string suburb, string city, string state, string country, string postCode, string login, string password, string middleNames = null)
+        public Customer UpdateCustomer(int id, string firstName, string lastName, DateTime dateOfBirth, int genderId, string streetAddress, string suburb, string city, string state, string country, string postCode, string password, string middleNames)
         {
-            var customer = _context.Customers.Find(id);
+            var customer = _customerRepository.Get(id);
 
             if (customer == null)
             {
@@ -51,8 +54,8 @@ namespace OlympicGamesApp.Services
             }
 
             customer.FirstName = firstName;
-            customer.LastName = lastName;
             customer.MiddleNames = middleNames;
+            customer.LastName = lastName;
             customer.DateOfBirth = dateOfBirth;
             customer.GenderId = genderId;
             customer.StreetAddress = streetAddress;
@@ -61,25 +64,45 @@ namespace OlympicGamesApp.Services
             customer.State = state;
             customer.Country = country;
             customer.PostCode = postCode;
-            customer.Login = login;
             customer.Password = password;
 
-
-            _context.SaveChanges();
+            _customerRepository.Update(customer);
             return customer;
         }
 
-        public void DeleteCustomer(int? id)
+        public Customer UpdateCustomerPicture(int id, int pictureId)
         {
-            var customer = _context.Customers.Find(id);
+            var customer = _customerRepository.Get(id);
 
             if (customer == null)
             {
                 throw new InvalidOperationException("No customer with the provided id was found!");
             }
 
-            _context.Customers.Remove(customer);
-            _context.SaveChanges();
+            customer.PictureId = pictureId;
+
+            _customerRepository.Update(customer);
+            return customer;
+        }
+
+        public void DeleteCustomer(int id)
+        {
+            var customer = _customerRepository.Get(id);
+
+            if (customer == null)
+            {
+                throw new InvalidOperationException("No customer with the provided id was found!");
+            }
+
+            var pictureId = customer.PictureId;
+
+            _customerRepository.Delete(customer);
+
+            if (pictureId > 2)
+            {
+                var picture = _pictureRepository.Get((int)pictureId);
+                _pictureRepository.Delete(picture);
+            }
         }
     }
 }

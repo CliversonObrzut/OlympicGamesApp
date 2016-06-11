@@ -1,4 +1,5 @@
 ﻿using OlympicGamesApp.DataAccess.Models;
+using SharpRepository.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,12 @@ namespace OlympicGamesApp.Services
 {
     public class TicketOrderApplicationService
     {
-        protected OlympicDbContext _context;
+        private IRepository<TicketOrder> _ticketOrderRepository;
+        private OlympicDbContext _context = new OlympicDbContext();
 
-        public TicketOrderApplicationService(OlympicDbContext context)
+        public TicketOrderApplicationService(IRepository<TicketOrder> ticketOrderRepository)
         {
-            _context = context;
+            _ticketOrderRepository = ticketOrderRepository;
         }
 
         public TicketOrder CreateTicketOrder(int customerId, DateTime purchaseDate, List<TicketOrderItem> ticketOrderItems)
@@ -23,18 +25,18 @@ namespace OlympicGamesApp.Services
             {
                 CustomerId = customerId,
                 PurchaseDate = purchaseDate,
-                TotalCost = totalCost
+                TotalCost = totalCost,
+                TicketOrderItems = ticketOrderItems
             };
 
-            _context.TicketOrders.Add(ticketOrder);
-            _context.SaveChanges();
+            _ticketOrderRepository.Add(ticketOrder);
 
             return ticketOrder;
         }
 
         public TicketOrder UpdateTicketOrder(int id, int customerId, DateTime purchaseDate, List<TicketOrderItem> ticketOrderItems)
         {
-            var ticketOrder = _context.TicketOrders.Find(id);
+            var ticketOrder = _ticketOrderRepository.Get(id);
 
             if (ticketOrder == null)
             {
@@ -45,22 +47,22 @@ namespace OlympicGamesApp.Services
             ticketOrder.CustomerId = customerId;
             ticketOrder.PurchaseDate = purchaseDate;
             ticketOrder.TotalCost = totalCost;
+            ticketOrder.TicketOrderItems = ticketOrderItems;
 
-            _context.SaveChanges();
+            _ticketOrderRepository.Update(ticketOrder);
             return ticketOrder;
         }
 
         public void DeleteTicketOrder(int? id)
         {
-            var ticketOrder = _context.TicketOrders.Find(id);
+            var ticketOrder = _ticketOrderRepository.Get((int)id);
 
             if (ticketOrder == null)
             {
                 throw new InvalidOperationException("No customer with the provided id was found!");
             }
 
-            _context.TicketOrders.Remove(ticketOrder);
-            _context.SaveChanges();
+            _ticketOrderRepository.Delete(ticketOrder);
         }
     }
 }

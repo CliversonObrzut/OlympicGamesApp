@@ -1,0 +1,57 @@
+﻿@model IEnumerable<OlympicGamesApp.UI.ViewModels.TicketOrderItem.TicketOrderItemIndexViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TicketOrderId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TicketDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitItemPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalItemPrice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TicketOrderId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TicketDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitItemPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalItemPrice)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

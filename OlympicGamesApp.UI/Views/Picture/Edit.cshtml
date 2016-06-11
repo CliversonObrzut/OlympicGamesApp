@@ -1,0 +1,52 @@
+﻿@model OlympicGamesApp.UI.ViewModels.Picture.PictureEditViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Change this picture</h2>
+
+<div class="form-horizontal all-buttons">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <dl class="dl-horizontal jumbotron">
+        <dt>
+            @Html.DisplayNameFor(model => model.ThumStringData)
+        </dt>
+
+        <dd>
+            <img src="/Picture/Picture/@Model.PictureId" class="customer-img" />
+        </dd>
+
+        @using (Html.BeginForm("Edit", "Picture", new { id = Model.PictureId}, FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <dt>
+                @Html.DisplayNameFor(model => model.PictureId)
+            </dt>
+            <dd>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <input type="file" class="form-control" name="image" value="" />
+                    </div>
+                </div>
+            </dd>
+            <dd>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.Hidden("pictureId", Model.PictureId)
+                        <input type="submit" value="Upload" class="btn btn-default" />
+                    </div>
+                </div>
+            </dd>
+        }
+    </dl>
+</div>
+
+<div>
+        @Html.ActionLink("Back to Index", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

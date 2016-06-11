@@ -1,0 +1,65 @@
+﻿@model OlympicGamesApp.UI.ViewModels.Customer.CustomerProfileViewModel
+
+@{
+    ViewBag.Title = "cProfile";
+}
+
+<div>
+    <div class="col-md-10">
+        <h2>Welcome, @Model.FirstName</h2>
+    </div>
+    <div class="col-md-2 all-buttons">
+        @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+        {
+            <input type="submit" value="Logout" class="center-block" />
+        }
+    </div>
+</div>
+<hr id="clear-both" />
+    <div class="col-md-3 jumbotron all-buttons">
+        <div>
+            <img src="/Picture/Picture/@Model.PictureId" class="center-block customer-img" />
+        </div>
+        @using (Html.BeginForm("Details", "Customer",new { id = Model.Id }, FormMethod.Get))
+        {
+            <div class="form-group">
+                <input type="submit" value="My Details" class="center-block" />
+            </div>
+        }
+
+        @using (Html.BeginForm("Index", "TicketOrder", new { id = Model.Id }, FormMethod.Get))
+        {
+            <div class="form-group">
+                <input type="submit" value="My Orders" class="center-block" />
+            </div>
+        }
+        @using (Html.BeginForm("Index", "Country", new { id = Model.Id }, FormMethod.Get))
+        {
+            <div class="form-group">
+                <input type="submit" value="Countries" class="center-block" />
+            </div>
+        }
+        @using (Html.BeginForm("Index", "Athlete", new { id = Model.Id }, FormMethod.Get))
+        {
+            <div class="form-group">
+                <input type="submit" value="Athletes" class="center-block" />
+            </div>
+        }
+        @using (Html.BeginForm("Index", "Sport", new { id = Model.Id }, FormMethod.Get))
+        {
+            <div class="form-group">
+                <input type="submit" value="Sports" class="center-block" />
+            </div>
+        }
+        @using (Html.BeginForm("Index", "Modality", new { id = Model.Id }, FormMethod.Get))
+        {
+            <div class="form-group">
+                <input type="submit" value="Modalities" class="center-block" />
+            </div>
+        }
+    </div>
+<div class="col-md-9">
+    <div class="jumbotron">
+        <p>teste</p>
+    </div>
+</div>

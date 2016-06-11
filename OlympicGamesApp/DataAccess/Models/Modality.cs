@@ -12,6 +12,8 @@ namespace OlympicGamesApp.DataAccess.Models
         public string Name { get; set; }
         public int ModalityCategoryId { get; set; }
         public int SportId { get; set; }
+        public int? PictureId { get; set; }
+        public virtual Picture Picture { get; set; }
         public virtual ModalityCategory ModalityCategory { get; set; }
         public virtual Sport Sport { get; set; }
         public virtual List<Athlete> Athletes { get; set; }

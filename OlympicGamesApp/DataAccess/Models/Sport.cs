@@ -10,6 +10,8 @@ namespace OlympicGamesApp.DataAccess.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public int? PictureId { get; set; }
+        public virtual Picture Picture { get; set; }
         public virtual List<Modality> Modalities { get; set; }
         public virtual List<Customer> Customers { get; set; }
         

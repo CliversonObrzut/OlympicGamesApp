@@ -60,6 +60,7 @@
     <Compile Include="DataAccess\Models\Country.cs" />
     <Compile Include="DataAccess\Models\Customer.cs" />
     <Compile Include="DataAccess\Models\Gender.cs" />
+    <Compile Include="DataAccess\Models\Picture.cs" />
     <Compile Include="DataAccess\Models\Mapping\AthleteMap.cs" />
     <Compile Include="DataAccess\Models\Mapping\CompetitionEventMap.cs" />
     <Compile Include="DataAccess\Models\Mapping\CompetitionPhaseMap.cs" />
@@ -96,8 +97,21 @@
     <Compile Include="Migrations\201605210330023_TicketOrderItemColumnsUpdated.Designer.cs">
       <DependentUpon>201605210330023_TicketOrderItemColumnsUpdated.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605221249384_PictureTableAdded.cs" />
+    <Compile Include="Migrations\201605221249384_PictureTableAdded.Designer.cs">
+      <DependentUpon>201605221249384_PictureTableAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605250013045_PictureTableChanged.cs" />
+    <Compile Include="Migrations\201605250013045_PictureTableChanged.Designer.cs">
+      <DependentUpon>201605250013045_PictureTableChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605301203327_PictureTableRelatedToManyEntities.cs" />
+    <Compile Include="Migrations\201605301203327_PictureTableRelatedToManyEntities.Designer.cs">
+      <DependentUpon>201605301203327_PictureTableRelatedToManyEntities.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\PictureApplicationService.cs" />
     <Compile Include="Services\TicketOrderItemApplicationService.cs" />
     <Compile Include="Services\TicketOrderApplicationService.cs" />
     <Compile Include="Services\CustomerApplicationService.cs" />
@@ -111,6 +125,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605210330023_TicketOrderItemColumnsUpdated.resx">
       <DependentUpon>201605210330023_TicketOrderItemColumnsUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605221249384_PictureTableAdded.resx">
+      <DependentUpon>201605221249384_PictureTableAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605250013045_PictureTableChanged.resx">
+      <DependentUpon>201605250013045_PictureTableChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605301203327_PictureTableRelatedToManyEntities.resx">
+      <DependentUpon>201605301203327_PictureTableRelatedToManyEntities.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

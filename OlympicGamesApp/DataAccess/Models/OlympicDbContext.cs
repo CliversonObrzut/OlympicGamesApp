@@ -20,6 +20,7 @@ namespace OlympicGamesApp.DataAccess.Models
         public DbSet<Gender> Genders { get; set; }
         public DbSet<Modality> Modalities { get; set; }
         public DbSet<ModalityCategory> ModalityCategories { get; set; }
+        public DbSet<Picture> Pictures { get; set; }
         public DbSet<Sport> Sports { get; set; }
         public DbSet<TicketEvent> TicketEvents { get; set; }
         public DbSet<TicketOrder> TicketOrders { get; set; }
