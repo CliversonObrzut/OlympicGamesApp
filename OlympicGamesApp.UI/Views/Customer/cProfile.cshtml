@@ -60,6 +60,46 @@
     </div>
 <div class="col-md-9">
     <div class="jumbotron">
-        <p>teste</p>
+        <div>
+            <div>
+                @Html.Partial("_NextEvents", Model)
+            </div>
+        </div>
+        <hr id="clear-both" />
+        <table class="table">
+            <tr>
+                <th style="font-size: 16px; text-align:center">My Favorites</th>
+            </tr>
+        </table>
+        <div>
+            <div class="col-md-6">
+                @Html.Partial("_FavoriteCountries", Model)
+            </div>
+            <div class="col-md-6">
+                @Html.Partial("_FavoriteAthletes", Model)
+            </div>
+        </div>
+        <hr id="clear-both" />
+        <div>
+            <div class="col-md-6">
+                @Html.Partial("_FavoriteSports", Model)
+            </div>
+            <div class="col-md-6">
+                @Html.Partial("_FavoriteModalities", Model)
+            </div>
+        </div>
+        <hr id="clear-both" />
+        <div>
+            <div>
+                @Html.Partial("_FavoriteAthleteMedalTable", Model)
+            </div>
+        </div>
+        <hr id="clear-both" />
+        <div>
+            <div>
+                @Html.Partial("_FavoriteCountryMedalTable", Model)
+            </div>
+        </div>
+        <hr id="clear-both" />
     </div>
 </div>

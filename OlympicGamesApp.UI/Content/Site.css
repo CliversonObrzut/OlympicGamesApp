@@ -93,11 +93,9 @@ textarea {
     margin-left: 10px;
 }
 
+.center-align td{
+   text-align: center;   
+}
 .my-center-align th{
    text-align: center;   
 }
-
-
-
-
-

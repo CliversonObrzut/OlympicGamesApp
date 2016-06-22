@@ -1,0 +1,40 @@
+﻿@model OlympicGamesApp.UI.ViewModels.Customer.CustomerProfileViewModel
+
+<table class="table">
+    <tr>
+        <th colspan="6" style="font-size: 16px; text-align:center">Medal Table</th>
+    </tr>
+    <tr>
+        <th colspan="2">by Favorite Countries</th>
+        <th>
+            <img src="/Picture/PictureThumb/3" class="center-block"/>
+        </th>
+        <th>
+            <img src="/Picture/PictureThumb/4" class="center-block"/>
+        </th>
+        <th>
+            <img src="/Picture/PictureThumb/5" class="center-block"/>
+        </th>
+    </tr>
+
+@foreach (var item in Model.FavoriteCountries)
+{
+    <tr>
+        <td>
+            <img src="/Picture/PictureThumb/@item.PictureId"/>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td style="text-align:center">
+            @Html.DisplayFor(modelItem => item.GoldMedal)
+        </td>
+        <td style="text-align:center">
+            @Html.DisplayFor(modelItem => item.SilverMedal)
+        </td>
+        <td style="text-align:center">
+            @Html.DisplayFor(modelItem => item.BronzeMedal)
+        </td>
+    </tr>
+}
+</table>

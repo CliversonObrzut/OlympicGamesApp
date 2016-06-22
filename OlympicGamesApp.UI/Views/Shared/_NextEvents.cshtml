@@ -1,0 +1,43 @@
+﻿@model OlympicGamesApp.UI.ViewModels.Customer.CustomerProfileViewModel
+
+<table class="table">
+    <tr>
+        <th colspan="7" style="font-size: 16px; text-align:center">Next Olympic Competition Events</th>
+    </tr>
+    <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Sport</th>
+        <th>Modality</th>
+        <th>Phase</th>
+        <th>Session</th>
+        <th>Place</th>
+    </tr>
+
+@foreach (var item in Model.CompetitionEvents)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Modality.Sport.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Modality.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompetitionPhase.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompetitionSession.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Venue.Name)
+        </td>
+    </tr>
+}
+</table>

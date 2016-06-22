@@ -259,12 +259,18 @@ namespace OlympicGamesApp.Migrations
                 );
             context.SaveChanges();
 
+            List<Athlete> athletes = context.Athletes.ToList();
+            List<Athlete> athletes1 = athletes.Where(a => a.Id == 1 || a.Id == 4).ToList();
+            List<Athlete> athletes2 = athletes.Where(a => a.Id == 2).ToList();
+            List<Athlete> athletes3 = athletes.Where(a => a.Id == 4).ToList();
+            List<Athlete> athletes4 = athletes.Where(a => a.Id == 3).ToList();
+            
             context.Modalities.AddOrUpdate(
                 m => m.Name,
-                new Modality { Name = "Men 100m freestyle", ModalityCategoryId = 1, SportId = 1 },
-                new Modality { Name = "Men 200m freestyle", ModalityCategoryId = 1, SportId = 1 },
-                new Modality { Name = "Men 4x100m medley", ModalityCategoryId = 2, SportId = 1 },
-                new Modality { Name = "Men tennis single", ModalityCategoryId = 1, SportId = 3 },
+                new Modality { Name = "Men 100m freestyle", ModalityCategoryId = 1, SportId = 1, Athletes = athletes1 },
+                new Modality { Name = "Men 200m freestyle", ModalityCategoryId = 1, SportId = 1, Athletes = athletes2 },
+                new Modality { Name = "Men 4x100m medley", ModalityCategoryId = 2, SportId = 1, Athletes = athletes3 },
+                new Modality { Name = "Men tennis single", ModalityCategoryId = 1, SportId = 3, Athletes = athletes4 },
                 new Modality { Name = "Men tennis double", ModalityCategoryId = 2, SportId = 3 },
                 new Modality { Name = "Men 66-73kg (lightweight)", ModalityCategoryId = 1, SportId = 4 },
                 new Modality { Name = "Men basketball", ModalityCategoryId = 2, SportId = 2 }

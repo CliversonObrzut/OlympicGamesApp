@@ -1,0 +1,86 @@
+﻿@model IEnumerable<OlympicGamesApp.UI.ViewModels.Athlete.AthleteIndexViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@ViewBag.CustomerName,</h2>
+
+<hr />
+<div class="all-buttons">
+    @using (Html.BeginForm())
+    {
+        <div class="jumbotron">
+            <h4 id="index-h2">List of Athletes</h4>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CountryId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PictureId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FullName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DateOfBirth)
+                    </th>
+                    <th>
+                        <img src="/Picture/PictureThumb/3" class="center-block" />
+                    </th>
+                    <th>
+                        <img src="/Picture/PictureThumb/4" class="center-block" />
+                    </th>
+                    <th>
+                        <img src="/Picture/PictureThumb/5" class="center-block" />
+                    </th>
+                    <th style="text-align:center">
+                        @Html.DisplayNameFor(model => model.Favorite)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <img src="/Picture/PictureThumb/@item.CountryPictureId" />
+                        </td>
+                        <td>
+                            <img src="/Picture/PictureThumb/@item.PictureId" />
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FullName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateOfBirth)
+                        </td>
+                        <td style="text-align:center">
+                            @Html.DisplayFor(modelItem => item.GoldMedal)
+                        </td>
+                        <td style="text-align:center">
+                            @Html.DisplayFor(modelItem => item.SilverMedal)
+                        </td>
+                        <td style="text-align:center">
+                            @Html.DisplayFor(modelItem => item.BronzeMedal)
+                        </td>
+                        <td style="text-align:center">
+                            @Html.EditorFor(modelItem => item.Favorite)
+                        </td>
+                        <td style="text-align:center">
+                            @Html.ActionLink("Details", "Details", new { id = item.Id })
+                        </td>
+                    </tr>
+                }
+            </table>
+            <div class="col-md-offset-9">
+                <input type="submit" value="Save" id="save" style="margin-left:15px" />
+            </div>
+        </div>
+    }
+</div>
+<p>
+    @Html.ActionLink("Back to Profile", "cProfile", "Customer", new { id = ViewBag.CustomerId }, null)
+</p>
+

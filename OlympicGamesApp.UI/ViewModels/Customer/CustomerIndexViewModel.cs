@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OlympicGamesApp.DataAccess.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -30,5 +31,6 @@ namespace OlympicGamesApp.UI.ViewModels.Customer
 
         [Display(Name = "Country")]
         public string Country { get; set; }
+
     }
 }

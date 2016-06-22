@@ -101,10 +101,6 @@
     <Compile Include="Migrations\201605221249384_PictureTableAdded.Designer.cs">
       <DependentUpon>201605221249384_PictureTableAdded.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201605250013045_PictureTableChanged.cs" />
-    <Compile Include="Migrations\201605250013045_PictureTableChanged.Designer.cs">
-      <DependentUpon>201605250013045_PictureTableChanged.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201605301203327_PictureTableRelatedToManyEntities.cs" />
     <Compile Include="Migrations\201605301203327_PictureTableRelatedToManyEntities.Designer.cs">
       <DependentUpon>201605301203327_PictureTableRelatedToManyEntities.cs</DependentUpon>
@@ -128,9 +124,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605221249384_PictureTableAdded.resx">
       <DependentUpon>201605221249384_PictureTableAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605250013045_PictureTableChanged.resx">
-      <DependentUpon>201605250013045_PictureTableChanged.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605301203327_PictureTableRelatedToManyEntities.resx">
       <DependentUpon>201605301203327_PictureTableRelatedToManyEntities.cs</DependentUpon>

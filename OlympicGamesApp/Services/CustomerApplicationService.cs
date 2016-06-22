@@ -44,7 +44,7 @@ namespace OlympicGamesApp.Services
             return customer;
         }
 
-        public Customer UpdateCustomer(int id, string firstName, string lastName, DateTime dateOfBirth, int genderId, string streetAddress, string suburb, string city, string state, string country, string postCode, string password, string middleNames)
+        public Customer UpdateCustomer(int id, string firstName, string lastName, DateTime dateOfBirth, int genderId, string streetAddress, string suburb, string city, string state, string country, string postCode, string password, string middleNames /*List<Country> favoriteCountries, List<Athlete> favoriteAthletes, List<Sport> favoriteSports, List<Modality> favoriteModalities*/)
         {
             var customer = _customerRepository.Get(id);
 
@@ -65,6 +65,10 @@ namespace OlympicGamesApp.Services
             customer.Country = country;
             customer.PostCode = postCode;
             customer.Password = password;
+            //customer.Athletes = favoriteAthletes;
+            //customer.Countries = favoriteCountries;
+            //customer.Sports = favoriteSports;
+            //customer.Modalities = favoriteModalities;
 
             _customerRepository.Update(customer);
             return customer;

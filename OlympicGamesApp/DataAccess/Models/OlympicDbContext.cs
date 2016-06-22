@@ -28,6 +28,7 @@ namespace OlympicGamesApp.DataAccess.Models
         public DbSet<Venue> Venues { get; set; }
         public DbSet<VenueSector> VenueSectors { get; set; }
         
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new AthleteMap());

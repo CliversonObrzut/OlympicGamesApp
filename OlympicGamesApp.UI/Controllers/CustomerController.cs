@@ -42,9 +42,7 @@ namespace OlympicGamesApp.UI.Controllers
                     PictureId = c.PictureId,
                     FileName = c.Picture.ImageFileName,
                     ThumStringData = String.Format("data:{0};base64,{1}", c.Picture.ThumbnailContentType, Convert.ToBase64String(c.Picture.Thumbnail))
-
                 });
-
             return View(model);
         }
 
@@ -96,12 +94,41 @@ namespace OlympicGamesApp.UI.Controllers
                 return HttpNotFound();
             }
 
+            List<Athlete> athletes = _context.Athletes.ToList()
+                .Where(a => a.Customers
+                .Any(c => c.Id == customer.Id))
+                .ToList();
+
+            List<Country> countries = _context.Countries.ToList()
+                .Where(a => a.Customers
+                .Any(c => c.Id == customer.Id))
+                .ToList();
+
+            List<Sport> sports = _context.Sports.ToList()
+                .Where(a => a.Customers
+                .Any(c => c.Id == customer.Id))
+                .ToList();
+
+            List<Modality> modalities = _context.Modalities.ToList()
+                .Where(a => a.Customers
+                .Any(c => c.Id == customer.Id))
+                .ToList();
+
+            List<CompetitionEvent> competitionEvents = _context.CompetitionEvents.ToList()
+                .Where(a => a.Date >= DateTime.Now)
+                .OrderBy(a => a.Date).ToList();
+
             var model = new CustomerProfileViewModel()
             {
                 Id = customer.Id,
                 FirstName = customer.FirstName,
                 FullName = customer.FirstName + " " + customer.MiddleNames + " " + customer.LastName,       
-                PictureId = customer.PictureId
+                PictureId = customer.PictureId,
+                FavoriteAthletes = athletes,
+                FavoriteCountries = countries,
+                FavoriteSports = sports,
+                FavoriteModalities = modalities,
+                CompetitionEvents = competitionEvents
             };
 
             return View(model);

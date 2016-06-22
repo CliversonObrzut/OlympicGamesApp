@@ -201,5 +201,11 @@ namespace OlympicGamesApp.UI.Controllers
             var picture = _context.Pictures.Find(id);
             return File(picture.Image, picture.ImageContentType, picture.ImageFileName);
         }
+
+        public ActionResult PictureThumb(int? id)
+        {
+            var picture = _context.Pictures.Find(id);
+            return File(picture.Thumbnail, picture.ThumbnailContentType, picture.ThumbnailFileName);
+        }
     }
 }

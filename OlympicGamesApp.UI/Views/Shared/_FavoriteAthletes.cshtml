@@ -1,0 +1,22 @@
+﻿@model OlympicGamesApp.UI.ViewModels.Customer.CustomerProfileViewModel
+
+<table class="table">
+    <tr>
+        <th colspan="3">Athletes</th>
+    </tr>
+
+@foreach (var item in Model.FavoriteAthletes)
+{
+    <tr>
+        <td>
+            <img src="/Picture/PictureThumb/@item.Country.PictureId"/>
+        </td>
+        <td>
+            <img src="/Picture/PictureThumb/@item.PictureId"/>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+    </tr>
+}
+</table>

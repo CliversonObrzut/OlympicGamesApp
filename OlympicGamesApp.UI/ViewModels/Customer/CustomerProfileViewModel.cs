@@ -23,16 +23,14 @@ namespace OlympicGamesApp.UI.ViewModels.Customer
         [Display(Name = "")]
         public string FirstName { get; set; }
 
-        [Display(Name = "Favorite Countries")]
-        public List<Country> FavoriteCountries { get; set; }
+        public List<OlympicGamesApp.DataAccess.Models.Country> FavoriteCountries { get; set; }
 
-        [Display(Name = "Favorite Athletes")]
-        public List<Athlete> FavoriteAthletes { get; set; }
+        public List<OlympicGamesApp.DataAccess.Models.Athlete> FavoriteAthletes { get; set; }
 
-        [Display(Name = "Favorite Sports")]
-        public List<Sport> FavoriteSports { get; set; }
+        public List<OlympicGamesApp.DataAccess.Models.Sport> FavoriteSports { get; set; }
 
-        [Display(Name = "Favorite Modalities")]
-        public List<Modality> FavoriteModalities { get; set; }
+        public List<OlympicGamesApp.DataAccess.Models.Modality> FavoriteModalities { get; set; }
+
+        public List<CompetitionEvent> CompetitionEvents { get; set; }
     }
 }
